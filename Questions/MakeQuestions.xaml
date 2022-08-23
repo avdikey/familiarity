@@ -12,12 +12,12 @@
         <local:Theme x:Key="colors"/>
     </Window.Resources>
     <Grid DataContext="{StaticResource colors}">
-        <TextBlock x:Name="textblock2" Text="№1" FontSize="25" FontFamily="/familiarity_wpf;component/Fonts/#Galiver Sans Obliques" 
+        <TextBlock x:Name="textblock2" Text="#1" FontSize="25" FontFamily="/familiarity_wpf;component/Fonts/#Galiver Sans Obliques" 
                     TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5"/>
         <Button Content="&lt;" Margin="5" FontSize="70" x:Name="ButtonLeft"
                 Foreground="{Binding main_color}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="2" Click="ButtonLeft_Click" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="400" MinHeight="85"
-                 Background="{Binding main_color}" BorderBrush="{Binding border_main_color}"/>
+                 Background="{Binding main_color}" BorderBrush="{Binding border_main_color}" x:Name="tb"/>
         <Button Content=">" Margin="5" FontSize="70" x:Name="ButtonRight"
                 Foreground="{Binding main_color}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="2" Click="ButtonRight_Click" FontFamily="Comic Sans MS" HorizontalAlignment="Right" VerticalAlignment="Center"/>
         <StackPanel x:Name="SecondStackPanel" VerticalAlignment="Bottom" HorizontalAlignment="Center">

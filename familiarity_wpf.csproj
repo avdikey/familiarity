@@ -55,40 +55,40 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Game.xaml.cs">
+    <Compile Include="Other windows\Game.xaml.cs">
       <DependentUpon>Game.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LanguageWindows.cs" />
-    <Compile Include="LoadQuestionSet.xaml.cs">
+    <Compile Include="Classes\LanguageWindows.cs" />
+    <Compile Include="Questions\LoadQuestionSet.xaml.cs">
       <DependentUpon>LoadQuestionSet.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MakeQuestions.xaml.cs">
+    <Compile Include="Questions\MakeQuestions.xaml.cs">
       <DependentUpon>MakeQuestions.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Players_Second.xaml.cs">
+    <Compile Include="Players\Players_Second.xaml.cs">
       <DependentUpon>Players_Second.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Questions.xaml.cs">
+    <Compile Include="Questions\Questions.xaml.cs">
       <DependentUpon>Questions.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SettingsWindow.xaml.cs">
+    <Compile Include="Other windows\SettingsWindow.xaml.cs">
       <DependentUpon>SettingsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewGenderQuestions.xaml.cs">
+    <Compile Include="Questions\ViewGenderQuestions.xaml.cs">
       <DependentUpon>ViewGenderQuestions.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewQuestions.xaml.cs">
+    <Compile Include="Questions\ViewQuestions.xaml.cs">
       <DependentUpon>ViewQuestions.xaml</DependentUpon>
     </Compile>
-    <Page Include="Game.xaml">
+    <Page Include="Other windows\Game.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LoadQuestionSet.xaml">
+    <Page Include="Questions\LoadQuestionSet.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Other windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -96,42 +96,42 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Data.cs" />
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Classes\Data.cs" />
+    <Compile Include="Other windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="MakeQuestions.xaml">
+    <Page Include="Questions\MakeQuestions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Players.xaml">
+    <Page Include="Players\Players.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Players_Second.xaml">
+    <Page Include="Players\Players_Second.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Questions.xaml">
+    <Page Include="Questions\Questions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SettingsWindow.xaml">
+    <Page Include="Other windows\SettingsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewGenderQuestions.xaml">
+    <Page Include="Questions\ViewGenderQuestions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewQuestions.xaml">
+    <Page Include="Questions\ViewQuestions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Players.xaml.cs">
+    <Compile Include="Players\Players.xaml.cs">
       <DependentUpon>Players.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -164,5 +164,6 @@
   <ItemGroup>
     <Resource Include="Icon-Data-List.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

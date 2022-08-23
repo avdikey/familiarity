@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:familiarity_wpf"
         mc:Ignorable="d"
-        Height="300" Width="600" Background="#FF7C45D6" 
+        Height="250" Width="500" Background="#FF7C45D6" 
         WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
     <Window.Resources>
         <local:LanguageWindows x:Key="translate"/>
@@ -15,11 +15,11 @@
         <TextBlock x:Name="textblock2" Text="№1" FontSize="25" FontFamily="/familiarity_wpf;component/Fonts/#Galiver Sans Obliques" 
                     TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5"/>
         <Button Content="&lt;" Margin="5" FontSize="70" x:Name="ButtonLeft"
-                Foreground="{Binding main_color}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="2" Click="Button1_Click" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                Foreground="{Binding main_color}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="2" Click="ButtonLeft_Click" FontFamily="Comic Sans MS" HorizontalAlignment="Left" VerticalAlignment="Center"/>
         <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="400" MinHeight="85"
                  Background="{Binding main_color}" BorderBrush="{Binding border_main_color}"/>
         <Button Content=">" Margin="5" FontSize="70" x:Name="ButtonRight"
-                Foreground="{Binding main_color}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="2" Click="Button1_Click" FontFamily="Comic Sans MS" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                Foreground="{Binding main_color}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="2" Click="ButtonRight_Click" FontFamily="Comic Sans MS" HorizontalAlignment="Right" VerticalAlignment="Center"/>
         <StackPanel x:Name="SecondStackPanel" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal">
                 <Button Content="{Binding Source={StaticResource translate}, Path=Temp[3]}" Margin="30,0" FontSize="20" Background="{Binding second_color}" x:Name="button_back" Click="button_back_Click"  BorderBrush="{Binding border_second_color}" BorderThickness="2"/>

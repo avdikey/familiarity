@@ -32,10 +32,6 @@ namespace familiarity_wpf
             InitializeComponent();
             MakeTempVar();
             SetTheme();
-            //ЗАДАЧИ:
-            //создать и загрузить иконку
-            //функция просмотра вопросов  listview
-            //функция загрузки своих вопросов - через форму и через файл
         }
         private void MakeTempVar()
         {

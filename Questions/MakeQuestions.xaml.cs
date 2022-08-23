@@ -19,11 +19,18 @@ namespace familiarity_wpf
     /// </summary>
     public partial class MakeQuestions : Window
     {
+        public int Players_count;
+        public int Player_now = 0;
+        public bool prev = false;
         public MakeQuestions()
         {
             InitializeComponent();
         }
-        private void Button1_Click(object sender, RoutedEventArgs e)
+        private void ButtonLeft_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void ButtonRight_Click(object sender, RoutedEventArgs e)
         {
 
         }

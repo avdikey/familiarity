@@ -64,9 +64,9 @@ namespace familiarity_wpf
             }
             button_continue.IsEnabled = Data.Window_Choose_Sex;
             if (Players_count > 0)
-                Choose_Sex(0, true, false);
+                Choose_Gender(0, true, false);
             else
-                Choose_Sex(0, true, true);
+                Choose_Gender(0, true, true);
         }
 
         private void button_back_Click(object sender, RoutedEventArgs e)
@@ -133,11 +133,11 @@ namespace familiarity_wpf
             prev = true;
             if (Player_now == 0)
             {
-                Choose_Sex(Player_now, true, false);
+                Choose_Gender(Player_now, true, false);
             }
             else
             {
-                Choose_Sex(Player_now, false, false);
+                Choose_Gender(Player_now, false, false);
             }
             prev = false;
         }
@@ -151,11 +151,11 @@ namespace familiarity_wpf
                 {
                     if (Player_now + 1 == Players_count)
                     {
-                        Choose_Sex(Player_now, false, true);
+                        Choose_Gender(Player_now, false, true);
                     }
                     else
                     {
-                        Choose_Sex(Player_now, false, false);
+                        Choose_Gender(Player_now, false, false);
                     }
                 }
                 else
@@ -181,9 +181,9 @@ namespace familiarity_wpf
 
             }
         }
-        private void Choose_Sex(int i, bool first, bool next_last)
+        private void Choose_Gender(int i, bool isFirst, bool isNextLast)
         {
-            if (first)
+            if (isFirst)
             {
                 button_previous_player.IsEnabled = false;
                 if (Data.player_have_gender[Player_now])
@@ -204,7 +204,7 @@ namespace familiarity_wpf
                 Radio_Button_Identify();
                 button_previous_player.IsEnabled = true;
             }
-            if (next_last)
+            if (isNextLast)
             {
                 button_next_player.IsEnabled = false;
                 button_continue.IsEnabled = true;
@@ -218,7 +218,6 @@ namespace familiarity_wpf
                 }
             }
             player_name_textblock.Text = Data.Players[i];
-
         }
 
         private void Radio_Button_Identify()
@@ -277,6 +276,42 @@ namespace familiarity_wpf
                 case 2:
                     MessageBox.Show("Будь ласка, оберіть стать гравців.", "Інформація", MessageBoxButton.OK, MessageBoxImage.Information);
                     break;
+            }
+        }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case Key.F:
+                    female_radiobutton.IsChecked = true;
+                    break;
+                case Key.OemSemicolon:
+                    female_radiobutton.IsChecked = true;
+                    break;
+                case Key.M:
+                    male_radiobutton.IsChecked = true;
+                    break;
+                case Key.V:
+                    male_radiobutton.IsChecked = true;
+                    break;
+                case Key.X:
+                    male_radiobutton.IsChecked = true;
+                    break;
+                case Key.Right:
+                    if (button_next_player.IsEnabled)
+                        button_next_player_Click(sender, e);
+                    break;
+                case Key.Left:
+                    if (button_previous_player.IsEnabled)
+                        button_previous_player_Click(sender, e);
+                    break;
+                case Key.Enter:
+                    if (button_continue.IsEnabled)
+                        button_continue_Click(sender, e);
+                    break;
+                default:
+                    break; 
             }
         }
     }

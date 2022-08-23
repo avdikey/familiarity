@@ -1,0 +1,20 @@
+﻿<Window x:Class="familiarity_wpf.ViewQuestions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:familiarity_wpf"
+        mc:Ignorable="d"
+        Height="300" Width="600" ResizeMode="NoResize" WindowStyle="None">
+    <Window.Resources>
+        <local:Theme x:Key="colors"/>
+        <local:LanguageWindows x:Key="translate"/>
+        <local:Data x:Key="data"/>
+    </Window.Resources>
+    <Border DataContext="{StaticResource colors}" BorderBrush="{Binding border_background_color}" BorderThickness="1">
+        <Grid>
+            <ListBox BorderBrush="{Binding border_background_color}" x:Name="lb" ItemsSource="{Binding Source={StaticResource data}, Path=Questions_endless}" Background="{Binding background_light_color}"/>
+            <Button Content="{Binding Source={StaticResource translate}, Path=Temp[3]}" Margin="5" FontSize="10" Background="{Binding second_color}" x:Name="button_back" Click="button_back_Click" BorderBrush="{Binding border_second_color}" BorderThickness="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        </Grid>
+    </Border>
+</Window>

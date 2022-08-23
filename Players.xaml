@@ -1,0 +1,48 @@
+﻿<Window x:Name="Window_Players" x:Class="familiarity_wpf.Players"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:familiarity_wpf"
+        mc:Ignorable="d"
+        Title="Familiarity - Players. Step 1" Height="450" Width="800" Background="#FF7C45D6" 
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged">
+    <Window.Resources>
+        <local:LanguageWindows x:Key="translate"/>
+        <local:Theme x:Key="colors"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource colors}">
+        <Button Content="?" HorizontalAlignment="Right" VerticalAlignment="Top" Width="30" Height="30" 
+                Margin="0,147,60,0" FontSize="20" FontFamily="Arial" Foreground="Black" 
+                Click="Button_Click" >
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Ellipse Fill="{Binding second_color}" Stroke="{Binding border_second_color}" StrokeThickness="2"/>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Grid>
+            <StackPanel x:Name="MainStackPanel" Orientation="Vertical" Margin="0" VerticalAlignment="Top">
+                <TextBlock x:Name="textblock1" Text="Familiarity" FontSize="36" 
+                           FontFamily="/familiarity_wpf;component/Fonts/#Permanent Marker" TextAlignment="Center" VerticalAlignment="Top" 
+                           HorizontalAlignment="Center" />
+                <TextBlock x:Name="textblock2" Text="{Binding Source={StaticResource translate}, Path=Temp[0]}" FontSize="30" FontFamily="/familiarity_wpf;component/Fonts/#Galiver Sans Obliques" 
+                           TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                <TextBox x:Name="TextBox1" FontSize="20" BorderBrush="{Binding border_main_color}" Background="{Binding main_color}"
+                         Margin="100,50" TabIndex="1" TextWrapping="Wrap" AcceptsReturn="True" 
+                         VerticalScrollBarVisibility="Auto" MinHeight="29" MinWidth="20" BorderThickness="2" />
+            </StackPanel>
+            <StackPanel x:Name="SecondStackPanel" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="{Binding Source={StaticResource translate}, Path=Temp[1]}" Margin="30,0" FontSize="20" Background="{Binding second_color}" x:Name="button_back" Click="button_back_Click" BorderBrush="{Binding border_second_color}" BorderThickness="2"/>
+                    <Button Content="{Binding Source={StaticResource translate}, Path=Temp[2]}" Margin="30,0" FontSize="20" Background="{Binding second_color}"
+                            Click="Button_Click_1" x:Name="button_continue" BorderBrush="{Binding border_second_color}" BorderThickness="2"/>
+                </StackPanel>
+                <TextBlock Text="©avdikey, 2022" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

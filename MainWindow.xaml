@@ -1,0 +1,20 @@
+﻿<Window x:Class="familiarity_wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:familiarity_wpf"
+        mc:Ignorable="d"
+        Title="Familiarity - Main" Height="450" Width="800" Background="#FF7C45D6" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Activated="Window_Activated" GotFocus="Window_GotFocus">
+    <Grid>
+        <TextBlock Text="Familiarity" FontSize="36" FontFamily="/familiarity_wpf;component/Fonts/#Permanent Marker" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" />
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button x:Name="button_to_questions" Content="" Margin="0,0,30,0" FontSize="20" Background="#FFFFBA00" Click="Button_Click_1" BorderBrush="#FFA67900" BorderThickness="2"/>
+                <Button x:Name="button_to_players" Content="" Margin="30,0,0,0" FontSize="20" Background="#FFFFBA00" Click="Button_Click" BorderBrush="#FFA67900" BorderThickness="2"/>
+            </StackPanel>
+            <Button x:Name="button_to_settings" Content="" Margin="0,10,0,0" FontSize="20" Background="#FFFFBA00" BorderBrush="#FFA67900" BorderThickness="2" HorizontalAlignment="Center" Padding="7,1" Click="Button_Click_2"/>
+        </StackPanel>
+        <TextBlock Text="©avdikey, 2022" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+    </Grid>
+</Window>

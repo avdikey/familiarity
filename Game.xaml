@@ -1,0 +1,49 @@
+﻿<Window x:Name="Window_Game" x:Class="familiarity_wpf.Game"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:familiarity_wpf"
+        mc:Ignorable="d"
+        Title="Familiarity - Game" Height="450" Width="800" Background="#FF7C45D6" 
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged">
+    <Window.Resources>
+        <local:LanguageWindows x:Key="translate"/>
+        <local:Theme x:Key="colors"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource colors}" >
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,7,0">
+            <Button Content="+" FontWeight="Bold" FontSize="20" BorderBrush="{x:Null}" Background="{x:Null}" Click="Button_Click"/>
+            <TextBlock x:Name="textblock_font" Text="30" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"/>
+            <Button Content="-" FontSize="20" Background="{x:Null}" BorderBrush="{x:Null}" FontWeight="Bold" Click="Button_Click_1"/>
+        </StackPanel>
+        <Grid>
+            <StackPanel x:Name="MainStackPanel" Orientation="Vertical" Margin="0" VerticalAlignment="Top">
+                <TextBlock x:Name="textblock1" Text="Familiarity" FontSize="36" 
+                           FontFamily="/familiarity_wpf;component/Fonts/#Permanent Marker" TextAlignment="Center" VerticalAlignment="Top" 
+                           HorizontalAlignment="Center" />
+                <TextBlock x:Name="textblock2" Text="{Binding Source={StaticResource translate}, Path=Temp[0]}" FontSize="30" FontFamily="/familiarity_wpf;component/Fonts/#Galiver Sans Obliques" 
+                           TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                <TextBox x:Name="TextBox1" FontSize="30" BorderBrush="{Binding border_main_color}" Background="{Binding main_color}"
+                         Margin="100,0" TabIndex="1" TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True"
+                         VerticalScrollBarVisibility="Auto" MinHeight="150" MinWidth="20" BorderThickness="2" TextAlignment="Center"/>
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom" x:Name="bottom_stackpanel">
+                <Grid x:Name="grid_for_question">
+                    <Button Content="{Binding Source={StaticResource translate}, Path=Temp[1]}" FontSize="20" Background="{Binding second_color}" 
+                            x:Name="button_another" BorderBrush="{Binding border_second_color}" BorderThickness="2" HorizontalAlignment="Left" Margin="75,20,0,20" Click="button_another_Click"/>
+                    <Button Content="{Binding Source={StaticResource translate}, Path=Temp[2]}" FontSize="20" Background="{Binding second_color}"
+                            x:Name="button_next" BorderBrush="{Binding border_second_color}" BorderThickness="2" HorizontalAlignment="Right" Margin="0,20,75,20" Click="button_next_Click"/>
+                </Grid>
+                <StackPanel x:Name="SecondStackPanel" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="{Binding Source={StaticResource translate}, Path=Temp[3]}" Margin="30,0" FontSize="20" Background="{Binding second_color}" x:Name="button_back" BorderBrush="{Binding border_second_color}" BorderThickness="2" Click="button_back_Click"/>
+                        <Button Content="{Binding Source={StaticResource translate}, Path=Temp[4]}" Margin="30,0" FontSize="20" Background="{Binding second_color}"
+                            x:Name="button_start" BorderBrush="{Binding border_second_color}" BorderThickness="2" Click="button_start_Click"/>
+                    </StackPanel>
+                    <TextBlock Text="©avdikey, 2022" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

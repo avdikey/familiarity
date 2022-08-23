@@ -1,0 +1,59 @@
+﻿<Window x:Class="familiarity_wpf.Questions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:familiarity_wpf"
+        mc:Ignorable="d"
+        Title="Familiarity - Questions" Height="450" Width="800" Background="#FF7C45D6" 
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:LanguageWindows x:Key="translate"/>
+        <local:Theme x:Key="colors"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource colors}">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <TextBlock x:Name="textblock1" Text="Familiarity" FontSize="36" 
+                        FontFamily="/familiarity_wpf;component/Fonts/#Permanent Marker" TextAlignment="Center" VerticalAlignment="Top" 
+                        HorizontalAlignment="Center" />
+            <TextBlock x:Name="textblock2" Text="{Binding Source={StaticResource translate}, Path=Temp[0]}" FontSize="30" FontFamily="/familiarity_wpf;component/Fonts/#Galiver Sans Obliques" 
+                        TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" />
+        </StackPanel>
+        <Grid>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <Button Content="{Binding Source={StaticResource translate}, Path=Temp[1]}" Margin="0,15" FontSize="20" x:Name="Button1"
+                            Background="{Binding main_color}" BorderBrush="{Binding border_main_color}" BorderThickness="2" Click="Button_Click_1" />
+                    <Button Content="{Binding Source={StaticResource translate}, Path=Temp[2]}" Margin="0,15" FontSize="20" x:Name="Button2"
+                            Background="{Binding main_color}" BorderBrush="{Binding border_main_color}" BorderThickness="2" Click="Button_Click_3" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Button Height="{Binding ElementName=Button1, Path=ActualHeight}" Click="Button_Click_2" Margin="5,15,0,15" Background="{Binding main_color}" BorderBrush="{Binding border_main_color}" 
+                            IsEnabled="False" BorderThickness="2" Width="25" HorizontalAlignment="Right" VerticalAlignment="Top" x:Name="btViewStandartQuestion">
+                        <Button.Content>
+                            <Image Source="Icon-Data-List.ico"/>
+                        </Button.Content>
+                    </Button>
+                    <Button Content="?" Width="30" Height="30" FontSize="20" FontFamily="Arial" Foreground="Black" 
+                            Click="Button_Click" VerticalAlignment="Bottom" Margin="5,15,0,15" HorizontalAlignment="Right" >
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Ellipse Fill="{Binding main_color}" Stroke="{Binding border_main_color}" StrokeThickness="2"/>
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        <StackPanel x:Name="SecondStackPanel" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="{Binding Source={StaticResource translate}, Path=Temp[3]}" Margin="30,0" FontSize="20" Background="{Binding second_color}" x:Name="button_back" Click="button_back_Click" BorderBrush="{Binding border_second_color}" BorderThickness="2"/>
+                <Button Content="{Binding Source={StaticResource translate}, Path=Temp[4]}" IsEnabled="False" Margin="30,0" FontSize="20" Background="{Binding second_color}" x:Name="button_start" Click="button_start_Click" BorderBrush="{Binding border_second_color}" BorderThickness="2"/>
+            </StackPanel>
+            <TextBlock Text="©avdikey, 2022" HorizontalAlignment="Center"/>
+        </StackPanel>
+    </Grid>
+</Window>

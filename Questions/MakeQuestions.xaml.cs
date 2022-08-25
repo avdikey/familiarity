@@ -19,40 +19,40 @@ namespace familiarity_wpf
     /// </summary>
     public partial class MakeQuestions : Window
     {
-        public int Question_now = 1;
-        public bool isFirst = true;
+        public int currentQuestionIndex = 0;
         List<string> newQuestionSet = new List<string>();
-        int balance;
         public MakeQuestions()
         {
             InitializeComponent();
         }
         private void ButtonLeft_Click(object sender, RoutedEventArgs e)
         {
-            if (!isFirst)
-            {
-                newQuestionSet[Question_now-1] = tb.Text;
-                tb.Text = newQuestionSet[Question_now];
-                Question_now -= 1;
-                textblock2.Text = "#" + Question_now.ToString();
-                if (Question_now == 1)
-                    isFirst = true;
-                balance -= 1;
-            }
+            if (currentQuestionIndex == 0) return;
+            if (currentQuestionIndex == newQuestionSet.Count)
+                newQuestionSet.Add(tb.Text);
+            else 
+                newQuestionSet[currentQuestionIndex] = tb.Text;
+            currentQuestionIndex -= 1;
+            tb.Text = newQuestionSet[currentQuestionIndex];
+            textblock2.Text = "#" + (currentQuestionIndex + 1).ToString();
         }
         private void ButtonRight_Click(object sender, RoutedEventArgs e)
         {
-            if (balance==0)
+            if (currentQuestionIndex == newQuestionSet.Count)
+            {
                 newQuestionSet.Add(tb.Text);
+                tb.Text = "";
+            }
             else
             {
-                balance += 1;
-                newQuestionSet[Question_now-1] = tb.Text;
+                newQuestionSet[currentQuestionIndex] = tb.Text;
+                if (currentQuestionIndex + 1 == newQuestionSet.Count)
+                    tb.Text = "";
+                else
+                    tb.Text = newQuestionSet[currentQuestionIndex + 1];
             }
-            tb.Text = "";
-            Question_now += 1;
-            textblock2.Text = "#" + Question_now.ToString();
-            isFirst = false;
+            currentQuestionIndex += 1;
+            textblock2.Text = "#" + (currentQuestionIndex + 1).ToString();
         }
 
         private void button_back_Click(object sender, RoutedEventArgs e)

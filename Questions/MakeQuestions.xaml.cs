@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace familiarity_wpf
 {
@@ -62,8 +64,19 @@ namespace familiarity_wpf
 
         private void button_save_Click(object sender, RoutedEventArgs e)
         {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.FileName = "My question set";
+            sfd.DefaultExt = ".qsendless";
+            sfd.Filter = "Question set for endless game (.qsendless)|*.qsendless";  
+            while (true)
+            {
+                if (sfd.ShowDialog() == true)
+                {
+                    File.AppendAllLines(sfd.FileName, newQuestionSet);
+                    break;
+                }
+            }
             this.Close();
         }
-
     }
 }

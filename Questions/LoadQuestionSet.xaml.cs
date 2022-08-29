@@ -1,6 +1,7 @@
-﻿using System;
-using System.IO;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Microsoft.Win32;
 
 namespace familiarity_wpf
 {
@@ -25,7 +25,7 @@ namespace familiarity_wpf
         {
             InitializeComponent();
         }
-        
+
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {

@@ -23,7 +23,7 @@ namespace familiarity_wpf
         int original_lang;
         bool IsChanged = false;
         Brush original_theme;
-        enum ThemeTypes 
+        enum ThemeTypes
         {
             standart, red_aqua_green, yellow_magenta_violet,
             green_peach_crimson, gray, skyblue_orange_tomato,
@@ -170,7 +170,7 @@ namespace familiarity_wpf
         private void TempTheme()
         {
             this.Background = Theme.background_color;
-            maintabs.BorderBrush = mainborder.BorderBrush = itemm.BorderBrush = itemmm.BorderBrush = 
+            maintabs.BorderBrush = mainborder.BorderBrush = itemm.BorderBrush = itemmm.BorderBrush =
                 itemmmm.BorderBrush = Theme.border_background_color;
             maintabs.Background = Theme.background_light_color;
             rbEng.Background = rbRu.Background = rbUa.Background = Theme.main_color;

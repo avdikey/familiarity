@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Windows.Media;
 
 namespace familiarity_wpf
@@ -156,7 +156,7 @@ namespace familiarity_wpf
             Translation[2][1][0] = "Нескінчена гра";
             Translation[2][1][1] = "Грати з гравцями";
             Translation[2][1][2] = "Налаштування";
-            
+
             Translation[2][2][0] = "Скасувати";
             Translation[2][2][1] = "Зберегти";
             Translation[2][2][2] = "Мова";

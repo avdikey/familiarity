@@ -189,7 +189,8 @@ namespace familiarity_wpf
                 ViewQuestions window = new ViewQuestions
                 {
                     Owner = this,
-                    Background = Theme.background_color                };
+                    Background = Theme.background_color
+                };
                 _ = window.ShowDialog();
 
             }
@@ -198,7 +199,7 @@ namespace familiarity_wpf
                 ViewGenderQuestions window = new ViewGenderQuestions
                 {
                     Owner = this,
-                    Background = Theme.background_color                
+                    Background = Theme.background_color
                 };
                 _ = window.ShowDialog();
             }

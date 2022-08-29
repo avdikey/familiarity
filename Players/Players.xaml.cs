@@ -54,7 +54,7 @@ namespace familiarity_wpf
         }
         private void ChangeSize()
         {
-            Window_Players.MinHeight = SecondStackPanel.ActualHeight + MainStackPanel.ActualHeight - TextBox1.ActualHeight  + TextBox1.MinHeight + 40;
+            Window_Players.MinHeight = SecondStackPanel.ActualHeight + MainStackPanel.ActualHeight - TextBox1.ActualHeight + TextBox1.MinHeight + 40;
             TextBox1.Height = Window_Players.ActualHeight - SecondStackPanel.ActualHeight - 40 -
                 MainStackPanel.ActualHeight + TextBox1.ActualHeight;
         }

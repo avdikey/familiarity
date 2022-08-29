@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -12,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Microsoft.Win32;
 
 namespace familiarity_wpf
 {
@@ -102,7 +102,7 @@ namespace familiarity_wpf
                 tabItemMale.IsSelected = true;
                 return;
             }
-            SaveQuestions();
+            SaveQuestions(sender, e);
         }
         private void button_saveMale_Click(object sender, RoutedEventArgs e)
         {
@@ -113,9 +113,9 @@ namespace familiarity_wpf
                 tabItemFemale.IsSelected = true;
                 return;
             }
-            SaveQuestions();
+            SaveQuestions(sender, e);
         }
-        private void SaveQuestions()
+        private void SaveQuestions(object sender, RoutedEventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.FileName = "My question set";
@@ -123,6 +123,10 @@ namespace familiarity_wpf
             sfd.Filter = "Question set for game with players (.qsgenders)|*.qsgenders";
             if (sfd.ShowDialog() == true)
             {
+                if (tb_male.Text != "")
+                    ButtonRightMale_Click(sender, e);
+                if (tb.Text != "")
+                    ButtonRight_Click(sender, e);
                 File.AppendAllLines(sfd.FileName, newQuestionSet_male);
                 File.AppendAllText(sfd.FileName, "/////\r\n");
                 File.AppendAllLines(sfd.FileName, newQuestionSet);

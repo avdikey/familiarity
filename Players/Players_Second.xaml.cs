@@ -311,7 +311,7 @@ namespace familiarity_wpf
                         button_continue_Click(sender, e);
                     break;
                 default:
-                    break; 
+                    break;
             }
         }
     }

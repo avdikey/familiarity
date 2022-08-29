@@ -1,6 +1,7 @@
-﻿using System;
-using System.IO;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Microsoft.Win32;
 
 namespace familiarity_wpf
 {
@@ -32,7 +32,7 @@ namespace familiarity_wpf
             if (currentQuestionIndex == 0) return;
             if (currentQuestionIndex == newQuestionSet.Count)
                 newQuestionSet.Add(tb.Text);
-            else 
+            else
                 newQuestionSet[currentQuestionIndex] = tb.Text;
             currentQuestionIndex -= 1;
             tb.Text = newQuestionSet[currentQuestionIndex];
@@ -67,9 +67,11 @@ namespace familiarity_wpf
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.FileName = "My question set";
             sfd.DefaultExt = ".qsendless";
-            sfd.Filter = "Question set for endless game (.qsendless)|*.qsendless";  
+            sfd.Filter = "Question set for endless game (.qsendless)|*.qsendless";
             if (sfd.ShowDialog() == true)
             {
+                if (tb.Text != "")
+                    ButtonRight_Click(sender, e);
                 File.AppendAllLines(sfd.FileName, newQuestionSet);
                 this.Close();
             }

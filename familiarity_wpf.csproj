@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Questions\MakeGenderQuestion.xaml.cs">
+      <DependentUpon>MakeGenderQuestion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Questions\OpenQuestionSet.xaml.cs">
+      <DependentUpon>OpenQuestionSet.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Other windows\Game.xaml.cs">
       <DependentUpon>Game.xaml</DependentUpon>
     </Compile>
@@ -80,6 +86,14 @@
     <Compile Include="Questions\ViewQuestions.xaml.cs">
       <DependentUpon>ViewQuestions.xaml</DependentUpon>
     </Compile>
+    <Page Include="Questions\MakeGenderQuestion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Questions\OpenQuestionSet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Other windows\Game.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

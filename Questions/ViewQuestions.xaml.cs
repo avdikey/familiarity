@@ -22,6 +22,10 @@ namespace familiarity_wpf
         public ViewQuestions()
         {
             InitializeComponent();
+            foreach (var c in Data.questionEndless)
+            {
+                lb.Items.Add(c);
+            }
         }
         private void button_back_Click(object sender, RoutedEventArgs e)
         {

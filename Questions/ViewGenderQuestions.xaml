@@ -21,10 +21,10 @@
                     </Style>
                 </TabControl.Resources>
                 <TabItem Header="Male">
-                    <ListBox BorderBrush="{Binding border_background_color}" x:Name="lb_male" ItemsSource="{Binding Source={StaticResource data}, Path=Questions_male}" Background="{Binding background_light_color}"/>
+                    <ListBox BorderBrush="{Binding border_background_color}" x:Name="lb_male" Background="{Binding background_light_color}"/>
                 </TabItem>
                 <TabItem Header="Female">
-                    <ListBox BorderBrush="{Binding border_background_color}" x:Name="lb_female" ItemsSource="{Binding Source={StaticResource data}, Path=Questions_female}" Background="{Binding background_light_color}"/>
+                    <ListBox BorderBrush="{Binding border_background_color}" x:Name="lb_female" Background="{Binding background_light_color}"/>
                 </TabItem>
             </TabControl>
             <Button Content="{Binding Source={StaticResource translate}, Path=Temp[3]}" Margin="5" FontSize="10" Background="{Binding second_color}" x:Name="button_back" Click="button_back_Click" BorderBrush="{Binding border_second_color}" BorderThickness="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>

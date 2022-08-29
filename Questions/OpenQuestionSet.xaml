@@ -1,0 +1,25 @@
+﻿<Window x:Class="familiarity_wpf.OpenQuestionSet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:familiarity_wpf"
+        mc:Ignorable="d"
+        Height="200" Width="400" ResizeMode="NoResize" WindowStyle="None">
+    <Window.Resources>
+        <local:Theme x:Key="colors"/>
+        <local:LanguageWindows x:Key="translate"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource colors}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <RadioButton x:Name="add" IsChecked="True" Content="Add questions to current question set" Background="{Binding main_color}" BorderBrush="{Binding border_main_color}" BorderThickness="2"/>
+            <RadioButton x:Name="replace" Content="Replace question set" Background="{Binding main_color}" BorderBrush="{Binding border_main_color}" BorderThickness="2"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal">
+                <Button Content="{Binding Source={StaticResource translate}, Path=Temp[3]}" Margin="30,0" FontSize="15" Background="{Binding second_color}" x:Name="button_back" Click="button_back_Click"  BorderBrush="{Binding border_second_color}" BorderThickness="2"/>
+                <Button Content="Open" Margin="30,0" FontSize="15" Background="{Binding second_color}" x:Name="button_save" Click="button_save_Click"  BorderBrush="{Binding border_second_color}" BorderThickness="2"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

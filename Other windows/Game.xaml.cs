@@ -21,7 +21,7 @@ namespace familiarity_wpf
     {
         public string question_now;
         public int Player_now = 0;
-        public string[] question;
+        List<string> questionSet = new List<string>();
         public int Player_count;
         string[][][] _t = LanguageWindows.Translation;
 
@@ -94,7 +94,7 @@ namespace familiarity_wpf
                 Player_count = Data.Players.Length - 1;
             }
             What_a_Question_pack();
-            question_now = question[new Random().Next(0, question.Length)];
+            question_now = questionSet[new Random().Next(0, questionSet.Count)];
             TextBox1.Text = question_now;
             ChangeSize();
         }
@@ -114,7 +114,7 @@ namespace familiarity_wpf
         private void button_another_Click(object sender, RoutedEventArgs e)
         {
             What_a_Question_pack();
-            question_now = question[new Random().Next(0, question.Length)];
+            question_now = questionSet[new Random().Next(0, questionSet.Count)];
             TextBox1.Text = question_now;
             if (!Data.Endless)
             {
@@ -128,17 +128,17 @@ namespace familiarity_wpf
         {
             if (Data.Endless)
             {
-                question = Data.Questions_endless;
+                questionSet = Data.questionEndless;
             }
             else
             {
                 if (Data.Players_gender[Player_now] == 1)
                 {
-                    question = Data.Questions_male;
+                    questionSet = Data.questionMale;
                 }
                 else if (Data.Players_gender[Player_now] == 2)
                 {
-                    question = Data.Questions_female;
+                    questionSet = Data.questionFemale;
                 }
                 textblock2.Text = LanguageWindows.Temp[7] + Data.Players[Player_now];
             }
@@ -152,7 +152,7 @@ namespace familiarity_wpf
                 button_next.Content = LanguageWindows.Temp[2];
                 Player_now = 0;
                 What_a_Question_pack();
-                question_now = question[new Random().Next(0, question.Length)];
+                question_now = questionSet[new Random().Next(0, questionSet.Count)];
                 TextBox1.Text = question_now;
             }
             else
@@ -160,7 +160,7 @@ namespace familiarity_wpf
                 button_next.Content = LanguageWindows.Temp[2];
                 Player_now += 1;
                 What_a_Question_pack();
-                question_now = question[new Random().Next(0, question.Length)];
+                question_now = questionSet[new Random().Next(0, questionSet.Count)];
                 TextBox1.Text = question_now;
                 if (Player_now == Player_count)
                 {

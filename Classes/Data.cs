@@ -13,9 +13,10 @@ namespace familiarity_wpf
         public static bool[] player_have_gender;
         public static bool First_launch { get; set; } = true;
         public static int language = 0;//0-eng,1-ru,2-uk
-        public static string[] Questions_male { get; set; }
-        public static string[] Questions_female { get; set; }
-        public static string[] Questions_endless { get; set; }
+        public static List<string> questionMale = new List<string>();
+        public static List<string> questionFemale = new List<string>();
+        public static List<string> questionEndless = new List<string>();
+
         public static bool Endless { get; set; }
         public static bool Window_Choose_Sex { get; set; } = false;
         public static bool New_Players_Changes { get; set; } = false;

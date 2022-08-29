@@ -68,15 +68,15 @@ namespace familiarity_wpf
             sfd.FileName = "My question set";
             sfd.DefaultExt = ".qsendless";
             sfd.Filter = "Question set for endless game (.qsendless)|*.qsendless";  
-            while (true)
+            if (sfd.ShowDialog() == true)
             {
-                if (sfd.ShowDialog() == true)
-                {
-                    File.AppendAllLines(sfd.FileName, newQuestionSet);
-                    break;
-                }
+                File.AppendAllLines(sfd.FileName, newQuestionSet);
+                this.Close();
             }
-            this.Close();
+            else
+            {
+                _ = MessageBox.Show("Failed to save the file. Try again");
+            }
         }
     }
 }

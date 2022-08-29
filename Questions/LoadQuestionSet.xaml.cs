@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace familiarity_wpf
 {
@@ -27,29 +29,37 @@ namespace familiarity_wpf
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
-            MakeQuestions mq = new MakeQuestions();
-            mq.Background = Theme.background_light_color;
-            mq.BorderThickness = new Thickness(3);
-            mq.BorderBrush = Theme.border_background_color;
-            mq.ShowDialog();
+            if (Data.Endless)
+            {
+                MakeQuestions mq = new MakeQuestions();
+                mq.Background = Theme.background_light_color;
+                mq.BorderThickness = new Thickness(3);
+                mq.BorderBrush = Theme.border_background_color;
+                mq.ShowDialog();
+            }
+            else
+            {
+                MakeGenderQuestion mq = new MakeGenderQuestion();
+                mq.Background = Theme.background_light_color;
+                mq.BorderThickness = new Thickness(3);
+                mq.BorderBrush = Theme.border_background_color;
+                mq.ShowDialog();
+            }
         }
 
         private void Button2_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void btViewLoadQuestion_Click(object sender, RoutedEventArgs e)
-        {
-
+            OpenQuestionSet oqs = new OpenQuestionSet()
+            {
+                Background = Theme.background_light_color,
+                BorderThickness = new Thickness(3),
+                BorderBrush = Theme.border_background_color,
+                Owner = this
+            };
+            oqs.ShowDialog();
         }
 
         private void button_back_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button_save_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

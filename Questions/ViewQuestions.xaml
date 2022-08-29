@@ -13,7 +13,7 @@
     </Window.Resources>
     <Border DataContext="{StaticResource colors}" BorderBrush="{Binding border_background_color}" BorderThickness="1">
         <Grid>
-            <ListBox BorderBrush="{Binding border_background_color}" x:Name="lb" ItemsSource="{Binding Source={StaticResource data}, Path=Questions_endless}" Background="{Binding background_light_color}"/>
+            <ListBox BorderBrush="{Binding border_background_color}" x:Name="lb" Background="{Binding background_light_color}"/>
             <Button Content="{Binding Source={StaticResource translate}, Path=Temp[3]}" Margin="5" FontSize="10" Background="{Binding second_color}" x:Name="button_back" Click="button_back_Click" BorderBrush="{Binding border_second_color}" BorderThickness="2" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
         </Grid>
     </Border>

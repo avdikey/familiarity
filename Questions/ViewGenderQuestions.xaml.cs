@@ -22,6 +22,14 @@ namespace familiarity_wpf
         public ViewGenderQuestions()
         {
             InitializeComponent();
+            foreach (var c in Data.questionFemale)
+            {
+                lb_female.Items.Add(c);
+            }
+            foreach (var c in Data.questionMale)
+            {
+                lb_male.Items.Add(c);
+            }
         }
         private void button_back_Click(object sender, RoutedEventArgs e)
         {

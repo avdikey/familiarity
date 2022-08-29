@@ -73,7 +73,7 @@ namespace familiarity_wpf
         {
             if (Data.Endless)
             {
-                string[] quest = {"Опиши себя в трех словах.", "Твое любимое хобби?",
+                List<string> quest = new List<string>{"Опиши себя в трех словах.", "Твое любимое хобби?",
                     "В какой стране ты хотел(а) бы жить?", "Что ты больше всего ценишь в своих друзьях?",
                     "Кто для тебя пример для подражания?", "Твой любимый цвет?", "Твой любимый запах?",
                     "В каком деле тебя можно назвать профессионалом?", "Твое любимое блюдо?","Твоя любимая игра?",
@@ -103,11 +103,11 @@ namespace familiarity_wpf
                     "Твой лучший друг?", "Любимый супергерой или вымышленный персонаж?", "Почему учишься или работаешь в данной сфере?",
                     "Твоя любимая фраза или цитата?"
                 };
-                Data.Questions_endless = quest;
+                Data.questionEndless = quest;
             }
             else
             {
-                string[] quest_male = {"Опиши себя в трех словах.", "Твое любимое хобби?",
+                List<string> questMale = new List<string>{"Опиши себя в трех словах.", "Твое любимое хобби?",
                     "В какой стране ты хотел бы жить?", "Что ты больше всего ценишь в своих друзьях?",
                     "Кто для тебя пример для подражания?", "Твой любимый цвет?", "Твой любимый запах?",
                     "В каком деле тебя можно назвать профессионалом?", "Твое любимое блюдо?","Твоя любимая игра?",
@@ -137,7 +137,7 @@ namespace familiarity_wpf
                     "Твой лучший друг?", "Любимый супергерой или вымышленный персонаж?", "Почему учишься или работаешь в данной сфере?",
                     "Твоя любимая фраза или цитата?", "Какой марки была или должна быть твоя первая машина?", "Что хуже: год не ездить на автомобиле или месяц быть без телефона?"
                 };
-                string[] quest_female = {"Опиши себя в трех словах.", "Твое любимое хобби?", "Говорят, девушки всегда долго собираются. Это про тебя?",
+                List<string> questFemale = new List<string>{"Опиши себя в трех словах.", "Твое любимое хобби?", "Говорят, девушки всегда долго собираются. Это про тебя?",
                     "В какой стране ты хотела бы жить?", "Что ты больше всего ценишь в своих друзьях?",
                     "Кто для тебя пример для подражания?", "Твой любимый цвет?", "Твой любимый запах?",
                     "В каком деле тебя можно назвать профессионалом?", "Твое любимое блюдо?","Твоя любимая игра?",
@@ -167,8 +167,8 @@ namespace familiarity_wpf
                     "Твой лучший друг?", "Любимый супергерой или вымышленный персонаж?", "Почему учишься или работаешь в данной сфере?",
                     "Твоя любимая фраза или цитата?"
                 };
-                Data.Questions_male = quest_male;
-                Data.Questions_female = quest_female;
+                Data.questionMale = questMale;
+                Data.questionFemale = questFemale;
             }
             button_start.IsEnabled = true;
             Button1.IsEnabled = false;
@@ -176,7 +176,7 @@ namespace familiarity_wpf
             btViewStandartQuestion.IsEnabled = true;
         }
         private void button_start_Click(object sender, RoutedEventArgs e)
-        { 
+        {
             Game window1 = new Game();
             window1.Show();
             Close();
@@ -186,18 +186,21 @@ namespace familiarity_wpf
         {
             if (Data.Endless)
             {
-                ViewQuestions window = new ViewQuestions();
-                window.Owner = this;
-                window.Background = Theme.background_color;
-                window.ShowDialog();
+                ViewQuestions window = new ViewQuestions
+                {
+                    Owner = this,
+                    Background = Theme.background_color                };
+                _ = window.ShowDialog();
 
             }
             else
             {
-                ViewGenderQuestions window = new ViewGenderQuestions();
-                window.Owner = this;
-                window.Background = Theme.background_color;
-                window.ShowDialog();
+                ViewGenderQuestions window = new ViewGenderQuestions
+                {
+                    Owner = this,
+                    Background = Theme.background_color                
+                };
+                _ = window.ShowDialog();
             }
         }
 
@@ -206,11 +209,13 @@ namespace familiarity_wpf
             button_start.IsEnabled = true;
             Button1.IsEnabled = true;
             btViewStandartQuestion.IsEnabled = true;
-            LoadQuestionSet lqs = new LoadQuestionSet();
-            lqs.Background = Theme.background_light_color;
-            lqs.BorderBrush = Theme.border_background_color;
-            lqs.BorderThickness = new Thickness(3);
-            lqs.ShowDialog();
+            LoadQuestionSet lqs = new LoadQuestionSet
+            {
+                Background = Theme.background_light_color,
+                BorderBrush = Theme.border_background_color,
+                BorderThickness = new Thickness(3)
+            };
+            _ = lqs.ShowDialog();
         }
     }
 }

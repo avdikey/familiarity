@@ -12,13 +12,13 @@
     </Window.Resources>
     <Grid DataContext="{StaticResource colors}">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <RadioButton x:Name="add" IsChecked="True" Content="Add questions to current question set" Background="{Binding main_color}" BorderBrush="{Binding border_main_color}" BorderThickness="2"/>
-            <RadioButton x:Name="replace" Content="Replace question set" Background="{Binding main_color}" BorderBrush="{Binding border_main_color}" BorderThickness="2"/>
+            <RadioButton x:Name="add" IsChecked="True" Content="{Binding Source={StaticResource translate}, Path=Temp[5]}" Background="{Binding main_color}" BorderBrush="{Binding border_main_color}" BorderThickness="2"/>
+            <RadioButton x:Name="replace" Content="{Binding Source={StaticResource translate}, Path=Temp[6]}" Background="{Binding main_color}" BorderBrush="{Binding border_main_color}" BorderThickness="2"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Bottom">
             <StackPanel Orientation="Horizontal">
                 <Button Content="{Binding Source={StaticResource translate}, Path=Temp[3]}" Margin="30,0" FontSize="15" Background="{Binding second_color}" x:Name="button_back" Click="button_back_Click"  BorderBrush="{Binding border_second_color}" BorderThickness="2"/>
-                <Button Content="Open" Margin="30,0" FontSize="15" Background="{Binding second_color}" x:Name="button_save" Click="button_save_Click"  BorderBrush="{Binding border_second_color}" BorderThickness="2"/>
+                <Button Content="{Binding Source={StaticResource translate}, Path=Temp[7]}" Margin="30,0" FontSize="15" Background="{Binding second_color}" x:Name="button_save" Click="button_save_Click"  BorderBrush="{Binding border_second_color}" BorderThickness="2"/>
             </StackPanel>
         </StackPanel>
     </Grid>

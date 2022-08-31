@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:familiarity_wpf"
         mc:Ignorable="d"
         Title="Familiarity - Questions" Height="450" Width="800" Background="#FF7C45D6" 
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen" Activated="Window_Activated">
     <Window.Resources>
         <local:LanguageWindows x:Key="translate"/>
         <local:Theme x:Key="colors"/>
@@ -29,21 +29,10 @@
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
                     <Button Height="{Binding ElementName=Button1, Path=ActualHeight}" Click="Button_Click_2" Margin="5,15,0,15" Background="{Binding main_color}" BorderBrush="{Binding border_main_color}" 
-                            IsEnabled="False" BorderThickness="2" Width="25" HorizontalAlignment="Right" VerticalAlignment="Top" x:Name="btViewStandartQuestion">
+                            BorderThickness="2" Width="25" HorizontalAlignment="Right" VerticalAlignment="Top" x:Name="btViewStandartQuestion">
                         <Button.Content>
                             <Image Source="Icon-Data-List.ico"/>
                         </Button.Content>
-                    </Button>
-                    <Button Content="?" Width="30" Height="30" FontSize="20" FontFamily="Arial" Foreground="Black" 
-                            Click="Button_Click" VerticalAlignment="Bottom" Margin="5,15,0,15" HorizontalAlignment="Right" >
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Grid>
-                                    <Ellipse Fill="{Binding main_color}" Stroke="{Binding border_main_color}" StrokeThickness="2"/>
-                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Grid>
-                            </ControlTemplate>
-                        </Button.Template>
                     </Button>
                 </StackPanel>
             </StackPanel>

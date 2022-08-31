@@ -29,8 +29,10 @@ namespace familiarity_wpf
         {
             MakeTempVar();
             InitializeComponent();
-            this.Title = _t[Data.language][0][2];
+            this.Title = _t[Data.language][0][4];
             this.Background = Theme.background_color;
+            plus_size.ToolTip = _t[Data.language][7][9];
+            minus_size.ToolTip = _t[Data.language][7][10];
         }
         public void MakeTempVar()
         {

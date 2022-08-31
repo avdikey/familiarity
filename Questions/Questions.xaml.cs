@@ -24,8 +24,23 @@ namespace familiarity_wpf
         {
             MakeTempVar();
             InitializeComponent();
-            this.Title = lang[Data.language][0][2];
+            this.Title = lang[Data.language][0][3];
             this.Background = Theme.background_color;
+            btViewStandartQuestion.ToolTip = lang[Data.language][7][8];
+            EnableButtonStart();
+        }
+        public void EnableButtonStart()
+        {
+            if (Data.Endless)
+            {
+                if (Data.questionEndless.Count != 0)
+                    button_start.IsEnabled = true;
+            }
+            else
+            {
+                if (Data.questionMale.Count != 0 || Data.questionFemale.Count != 0)
+                    button_start.IsEnabled = true;
+            }
         }
         public void MakeTempVar()
         {
@@ -34,6 +49,17 @@ namespace familiarity_wpf
             LanguageWindows.Temp[2] = lang[Data.language][5][2];
             LanguageWindows.Temp[3] = lang[Data.language][5][3];
             LanguageWindows.Temp[4] = lang[Data.language][5][4];
+            LanguageWindows.Temp[5] = lang[Data.language][5][5];
+            LanguageWindows.Temp[6] = lang[Data.language][5][6];
+            LanguageWindows.Temp[7] = lang[Data.language][5][7];
+            LanguageWindows.Temp[8] = lang[Data.language][5][8];
+            LanguageWindows.Temp[9] = lang[Data.language][5][9];
+            LanguageWindows.Temp[10] = lang[Data.language][5][10];
+            LanguageWindows.Temp[11] = lang[Data.language][5][11];
+            LanguageWindows.Temp[12] = lang[Data.language][5][12];
+            LanguageWindows.Temp[13] = lang[Data.language][5][13];
+            LanguageWindows.Temp[14] = lang[Data.language][5][14];
+            LanguageWindows.Temp[15] = lang[Data.language][5][15];
         }
 
         private void button_back_Click(object sender, RoutedEventArgs e)
@@ -50,23 +76,6 @@ namespace familiarity_wpf
                 window1.Show();
                 Close();
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            switch (Data.language)
-            {
-                case 0:
-                    _ = MessageBox.Show("Coming soon...", "How to make question set", MessageBoxButton.OK, MessageBoxImage.Information);
-                    break;
-                case 1:
-                    MessageBox.Show("Скоро будет...", "Как сделать набор вопросов", MessageBoxButton.OK, MessageBoxImage.Information);
-                    break;
-                case 2:
-                    MessageBox.Show("Скоро буде...", "Як зробити набір питань", MessageBoxButton.OK, MessageBoxImage.Information);
-                    break;
-            }
-
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -171,9 +180,6 @@ namespace familiarity_wpf
                 Data.questionFemale = questFemale;
             }
             button_start.IsEnabled = true;
-            Button1.IsEnabled = false;
-            Button2.IsEnabled = true;
-            btViewStandartQuestion.IsEnabled = true;
         }
         private void button_start_Click(object sender, RoutedEventArgs e)
         {
@@ -208,8 +214,6 @@ namespace familiarity_wpf
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             button_start.IsEnabled = true;
-            Button1.IsEnabled = true;
-            btViewStandartQuestion.IsEnabled = true;
             LoadQuestionSet lqs = new LoadQuestionSet
             {
                 Background = Theme.background_light_color,
@@ -217,6 +221,11 @@ namespace familiarity_wpf
                 BorderThickness = new Thickness(3)
             };
             _ = lqs.ShowDialog();
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            EnableButtonStart();
         }
     }
 }

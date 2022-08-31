@@ -15,13 +15,13 @@ namespace familiarity_wpf
         public static string[][][] Translation { get; set; } = new string[3][][];
         //0 - eng, 1 - ru, 2 - uk
         //0 - titles, 1 - mainwindow, 2 - settings, 3 - players, 4 - playerssecond, 5 - question, 6 - game
-        public static string[] Temp { get; set; } = new string[9];
+        public static string[] Temp { get; set; } = new string[16];
         public static void Translate()
         {
             //выделить место в памяти для разделения на языки
-            Translation[0] = new string[7][];
-            Translation[1] = new string[7][];
-            Translation[2] = new string[7][];
+            Translation[0] = new string[8][];
+            Translation[1] = new string[8][];
+            Translation[2] = new string[8][];
 
 
             //выделить место в памяти для разделения на группы
@@ -30,24 +30,27 @@ namespace familiarity_wpf
             Translation[0][2] = new string[7];//settings - eng
             Translation[0][3] = new string[3];//players - eng
             Translation[0][4] = new string[7];//playerssecond - eng
-            Translation[0][5] = new string[5];//question - eng
+            Translation[0][5] = new string[16];//question - eng
             Translation[0][6] = new string[9];//game - eng
+            Translation[0][7] = new string[11];//tooltip - eng
 
             Translation[1][0] = new string[5];//titles - ru
             Translation[1][1] = new string[3];//mainwindow - ru
             Translation[1][2] = new string[7];//settings - ru
             Translation[1][3] = new string[3];//players - ru
             Translation[1][4] = new string[7];//playerssecond - ru
-            Translation[1][5] = new string[5];//question - ru
+            Translation[1][5] = new string[16];//question - ru
             Translation[1][6] = new string[9];//game - ru
+            Translation[1][7] = new string[11];//tooltip - ru
 
             Translation[2][0] = new string[5];//titles - uk
             Translation[2][1] = new string[3];//mainwindow - uk
             Translation[2][2] = new string[7];//settings - uk
             Translation[2][3] = new string[3];//players - uk
             Translation[2][4] = new string[7];//playerssecond - uk
-            Translation[2][5] = new string[5];//question - uk
+            Translation[2][5] = new string[16];//question - uk
             Translation[2][6] = new string[9];//game - uk
+            Translation[2][7] = new string[11];//tooltip - uk
 
 
             //translate to english
@@ -86,6 +89,17 @@ namespace familiarity_wpf
             Translation[0][5][2] = "Load question set";
             Translation[0][5][3] = "Back";
             Translation[0][5][4] = "Start";
+            Translation[0][5][5] = "Add questions to current question set";
+            Translation[0][5][6] = "Replace question set";
+            Translation[0][5][7] = "Open";
+            Translation[0][5][8] = "Save";
+            Translation[0][5][9] = "Create new";
+            Translation[0][5][10] = "Load from file";
+            Translation[0][5][11] = "Load question set";
+            Translation[0][5][12] = "Good. Now please input question for male.";
+            Translation[0][5][13] = "Good. Now please input question for female.";
+            Translation[0][5][14] = "Failed to save the file. Try again.";
+            Translation[0][5][15] = "Next";
 
             Translation[0][6][0] = "Game";
             Translation[0][6][1] = "Another question";
@@ -96,6 +110,18 @@ namespace familiarity_wpf
             Translation[0][6][6] = "Next question";
             Translation[0][6][7] = "Question to ";
             Translation[0][6][8] = "Repeat";
+
+            Translation[0][7][0] = "Standart theme";
+            Translation[0][7][1] = "Fruit theme";
+            Translation[0][7][2] = "Violet theme";
+            Translation[0][7][3] = "Sea theme";
+            Translation[0][7][4] = "Gray theme";
+            Translation[0][7][5] = "Sunrise theme";
+            Translation[0][7][6] = "Orange theme";
+            Translation[0][7][7] = "Blue theme";
+            Translation[0][7][8] = "View question set";
+            Translation[0][7][9] = "Increase font size";
+            Translation[0][7][10] = "Decrease font size";
 
 
             //translate to russian
@@ -134,6 +160,17 @@ namespace familiarity_wpf
             Translation[1][5][2] = "Загрузить набор вопросов";
             Translation[1][5][3] = "Вернуться";
             Translation[1][5][4] = "Начать";
+            Translation[1][5][5] = "Добавить вопросы к текущему набору вопросов";
+            Translation[1][5][6] = "Заменить набор вопросов";
+            Translation[1][5][7] = "Открыть";
+            Translation[1][5][8] = "Сохранить";
+            Translation[1][5][9] = "Создать новый";
+            Translation[1][5][10] = "Загрузить из файла";
+            Translation[1][5][11] = "Загрузить набор вопросов";
+            Translation[1][5][12] = "Отлично. Теперь введите вопросы для мужского пола.";
+            Translation[1][5][13] = "Отлично. Теперь введите вопросы для женского пола.";
+            Translation[1][5][14] = "Ошибка сохранения файла. Повторите попытку.";
+            Translation[1][5][15] = "Далее";
 
             Translation[1][6][0] = "Игра";
             Translation[1][6][1] = "Другой вопрос";
@@ -144,6 +181,18 @@ namespace familiarity_wpf
             Translation[1][6][6] = "Следующий вопрос";
             Translation[1][6][7] = "Вопрос к игроку ";
             Translation[1][6][8] = "Повторить";
+
+            Translation[1][7][0] = "Стандартная тема";
+            Translation[1][7][1] = "Фруктовая тема";
+            Translation[1][7][2] = "Фиолетовая тема";
+            Translation[1][7][3] = "Морская тема";
+            Translation[1][7][4] = "Серая тема";
+            Translation[1][7][5] = "Утренняя тема";
+            Translation[1][7][6] = "Оранжевая тема";
+            Translation[1][7][7] = "Синяя тема";
+            Translation[1][7][8] = "Посмотреть набор вопросов";
+            Translation[1][7][9] = "Увеличить размер шрифта";
+            Translation[1][7][10] = "Уменьшить размер шрифта";
 
 
             //translate to ukrainian
@@ -182,7 +231,17 @@ namespace familiarity_wpf
             Translation[2][5][2] = "Завантажити набір питань";
             Translation[2][5][3] = "Повернутися";
             Translation[2][5][4] = "Розпочати";
-
+            Translation[2][5][5] = "Додати питання до набору питань";
+            Translation[2][5][6] = "Замінити набір питань";
+            Translation[2][5][7] = "Відкрити";
+            Translation[2][5][8] = "Зберегти";
+            Translation[2][5][9] = "Створити новий";
+            Translation[2][5][10] = "Завантажити з файлу";
+            Translation[2][5][11] = "Завантажити набір питань";
+            Translation[2][5][12] = "Чудово. Тепер введіть питання для чоловічої статі.";
+            Translation[2][5][13] = "Чудово. Тепер введіть питання для жіночої статі.";
+            Translation[2][5][14] = "Помилка збереження файлу. Спробуйте ще раз.";
+            Translation[2][5][15] = "Наступний крок";
 
             Translation[2][6][0] = "Гра";
             Translation[2][6][1] = "Інше питання";
@@ -193,6 +252,18 @@ namespace familiarity_wpf
             Translation[2][6][6] = "Наступне питання";
             Translation[2][6][7] = "Питання до гравця ";
             Translation[2][6][8] = "Повторити";
+
+            Translation[2][7][0] = "Стандартна тема";
+            Translation[2][7][1] = "Фруктова тема";
+            Translation[2][7][2] = "Фіолетова тема";
+            Translation[2][7][3] = "Морська тема";
+            Translation[2][7][4] = "Сіра тема";
+            Translation[2][7][5] = "Ранкова тема";
+            Translation[2][7][6] = "Помаранчева тема";
+            Translation[2][7][7] = "Синя тема";
+            Translation[2][7][8] = "Подивитись набір питань";
+            Translation[2][7][9] = "Збільшити розмір шрифту";
+            Translation[2][7][10] = "Зменшити розмір шрифту";
         }
     }
 

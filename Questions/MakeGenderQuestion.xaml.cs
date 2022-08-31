@@ -98,7 +98,7 @@ namespace familiarity_wpf
             isFemaleSaved = true;
             if (!isMaleSaved)
             {
-                _ = MessageBox.Show("Good. Now please input question for male.", "Next", MessageBoxButton.OK);
+                _ = MessageBox.Show(LanguageWindows.Temp[12], LanguageWindows.Temp[15], MessageBoxButton.OK);
                 tabItemMale.IsSelected = true;
                 return;
             }
@@ -109,7 +109,7 @@ namespace familiarity_wpf
             isMaleSaved = true;
             if (!isFemaleSaved)
             {
-                _ = MessageBox.Show("Good. Now please input question for female.", "Next", MessageBoxButton.OK);
+                _ = MessageBox.Show(LanguageWindows.Temp[13], LanguageWindows.Temp[15], MessageBoxButton.OK);
                 tabItemFemale.IsSelected = true;
                 return;
             }
@@ -134,7 +134,7 @@ namespace familiarity_wpf
             }
             else
             {
-                _ = MessageBox.Show("Failed to save the file. Try again");
+                _ = MessageBox.Show(LanguageWindows.Temp[14]);
             }
         }
     }

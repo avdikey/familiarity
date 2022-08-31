@@ -23,7 +23,7 @@
         <StackPanel x:Name="SecondStackPanel" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <StackPanel Orientation="Horizontal">
                 <Button Content="{Binding Source={StaticResource translate}, Path=Temp[3]}" Margin="30,0" FontSize="20" Background="{Binding second_color}" x:Name="button_back" Click="button_back_Click"  BorderBrush="{Binding border_second_color}" BorderThickness="2"/>
-                <Button Content="Save"  Margin="30,0" FontSize="20" Background="{Binding second_color}" x:Name="button_save" Click="button_save_Click"  BorderBrush="{Binding border_second_color}" BorderThickness="2"/>
+                <Button Content="{Binding Source={StaticResource translate}, Path=Temp[8]}"  Margin="30,0" FontSize="20" Background="{Binding second_color}" x:Name="button_save" Click="button_save_Click"  BorderBrush="{Binding border_second_color}" BorderThickness="2"/>
             </StackPanel>
         </StackPanel>
     </Grid>

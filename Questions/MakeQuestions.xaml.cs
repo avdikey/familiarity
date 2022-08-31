@@ -77,7 +77,7 @@ namespace familiarity_wpf
             }
             else
             {
-                _ = MessageBox.Show("Failed to save the file. Try again");
+                _ = MessageBox.Show(LanguageWindows.Temp[14]);
             }
         }
     }

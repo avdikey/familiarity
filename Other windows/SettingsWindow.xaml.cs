@@ -88,6 +88,14 @@ namespace familiarity_wpf
             run2.Text = lang[Data.language][2][6];
             bt1.Content = lang[Data.language][2][0];
             bt2.Content = lang[Data.language][2][1];
+            button1.ToolTip = lang[Data.language][7][0];
+            button2.ToolTip = lang[Data.language][7][1];
+            button3.ToolTip = lang[Data.language][7][2];
+            button4.ToolTip = lang[Data.language][7][3];
+            button5.ToolTip = lang[Data.language][7][4];
+            button6.ToolTip = lang[Data.language][7][5];
+            button7.ToolTip = lang[Data.language][7][6];
+            button8.ToolTip = lang[Data.language][7][7];
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {

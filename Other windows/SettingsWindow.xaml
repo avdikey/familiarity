@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:familiarity_wpf"
         mc:Ignorable="d"
-        Background="#FF7C45D6" Height="300" Width="600" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStyle="None">
+        Background="#FF7C45D6" Height="300" Width="600" Loaded="Window_Loaded" ResizeMode="NoResize" WindowStyle="None" Icon="/familiarity_wpf;component/icon.ico" Title="Settings">
     <Window.Resources>
         <local:Theme x:Key="colors"/>
     </Window.Resources>
@@ -143,6 +143,9 @@
                             <Run Text="Permanent Marker © 2011 Font Diner."/>
                             <LineBreak/>
                             <Run Text="Galiver Sans © 2016 Josen Fonts."/>
+                            <LineBreak/>
+                            <LineBreak/>
+                            <Run Text="Vectors by Vecteezy"/>
                         </Paragraph>
                     </FlowDocument>
                 </TabItem>

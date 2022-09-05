@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:familiarity_wpf"
         mc:Ignorable="d"
-        Title="Familiarity - Main" Height="450" Width="800" Background="#FF7C45D6" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Activated="Window_Activated" GotFocus="Window_GotFocus">
+        Title="Familiarity - Main" Height="450" Width="800" Background="#FF7C45D6" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Activated="Window_Activated" GotFocus="Window_GotFocus" Icon="/familiarity_wpf;component/icon.ico">
     <Grid>
         <TextBlock Text="Familiarity" FontSize="36" FontFamily="/familiarity_wpf;component/Fonts/#Permanent Marker" TextAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Center" />
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">

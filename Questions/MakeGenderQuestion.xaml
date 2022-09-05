@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:familiarity_wpf"
         mc:Ignorable="d"
-        Height="250" Width="500" Background="#FF7C45D6" 
-        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+        Height="250" Width="500" Background="#FF7C45D6" Title="Make question set"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Icon="/familiarity_wpf;component/icon.ico">
     <Window.Resources>
         <local:LanguageWindows x:Key="translate"/>
         <local:Theme x:Key="colors"/>

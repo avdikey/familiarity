@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:familiarity_wpf"
         mc:Ignorable="d"
-        Height="300" Width="600" ResizeMode="NoResize" WindowStyle="None">
+        Height="300" Width="600" ResizeMode="NoResize" WindowStyle="None" Icon="/familiarity_wpf;component/icon.ico" Title="View question set">
     <Window.Resources>
         <local:Theme x:Key="colors"/>
         <local:LanguageWindows x:Key="translate"/>

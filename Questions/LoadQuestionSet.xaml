@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:familiarity_wpf"
         mc:Ignorable="d"
         Height="300" Width="600" Background="#FF7C45D6" 
-        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None">
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" Icon="/familiarity_wpf;component/icon.ico" Title="Load question set">
     <Window.Resources>
         <local:LanguageWindows x:Key="translate"/>
         <local:Theme x:Key="colors"/>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:familiarity_wpf"
         mc:Ignorable="d"
         Title="Familiarity - Game" Height="450" Width="800" Background="#FF7C45D6" 
-        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged">
+        WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" Icon="/familiarity_wpf;component/icon.ico">
     <Window.Resources>
         <local:LanguageWindows x:Key="translate"/>
         <local:Theme x:Key="colors"/>

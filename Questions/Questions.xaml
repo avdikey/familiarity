@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:familiarity_wpf"
         mc:Ignorable="d"
-        Title="Familiarity - Questions" Height="450" Width="800" Background="#FF7C45D6" 
-        WindowStartupLocation="CenterScreen" Activated="Window_Activated">
+        Title="Familiarity - Questions" Height="450" Width="800" Background="#FF7C45D6"
+        WindowStartupLocation="CenterScreen" Activated="Window_Activated" Icon="/familiarity_wpf;component/icon.ico">
     <Window.Resources>
         <local:LanguageWindows x:Key="translate"/>
         <local:Theme x:Key="colors"/>

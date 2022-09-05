@@ -103,14 +103,20 @@ namespace familiarity_wpf
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            TextBox1.FontSize += 2;
-            textblock_font.Text = TextBox1.FontSize.ToString();
+            if (TextBox1.FontSize < 100)
+            {
+                TextBox1.FontSize += 2;
+                textblock_font.Text = TextBox1.FontSize.ToString();
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            TextBox1.FontSize -= 2;
-            textblock_font.Text = TextBox1.FontSize.ToString();
+            if (TextBox1.FontSize > 2)
+            {
+                TextBox1.FontSize -= 2;
+                textblock_font.Text = TextBox1.FontSize.ToString();
+            }
         }
 
         private void button_another_Click(object sender, RoutedEventArgs e)
